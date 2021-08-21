@@ -3,6 +3,7 @@
 ## Summary
 
 - [System Design](#system-design)
+- [Load Balancer](#load-balancer)
 - [Content Delivery Networks (CDN)](#content-delivery-networks-(cdn))
 - [Web Cash](#web-cash)
 - [Content Delivery](#figure-4)
@@ -50,6 +51,70 @@ Next we have Storage, there might be different kinds of storage that an applicat
 ![Different storages](./assets/storages.png)
 
 ![Other Services, Logging Service, Messaging / Quueues, Search Engine](./assets/others.png)
+
+## **Load Balancer**
+
+
+
+As we know if have a large number of loads or request at same time, our [server might exhaust](#exhausted-server), so we could do [**horizontal scale**](#horizontal-scaling) increasing the number of servers to perform ours requests, we call these servers [**server farm**](#server-farm), so, when we do this, we will need something to control the requests flow, for that we use **load balancer** (Load Balancers helps you scale your application to support a large number of users). 
+
+###### **Exhausted server**
+
+![Exhausted server](./assets/exhausted-server.png)
+
+###### **Server Farm**
+
+![Server Farm](./assets/server-farm.png)
+
+The **load balancer** get request to the client then distribute to the available server. The good thing about load balancer is that we could add more and more servers to handle more *loads* and also if one of the [servers goes down](#servers-goes-down) the load balancer register this server and distribute the traffic between the rest of available servers.
+
+###### **Load balancer**
+
+![Load balancer](./assets/load-balancer.png)
+
+###### **Servers goes down**
+
+![Load balancer](./assets/servers-goes-down.png)
+
+
+
+### Types of Load Balancers
+
+#### Hardware Load Balancer 
+
+Are more expensive and harder to maintain.
+
+#### Software Load Balancer
+
+They're more cheapest and most used
+
+
+
+### Load Balancing Algorithms 
+
+![Round Robin algorithm](./assets/round-robin.png)
+
+![Weighted Round Robin algorithm](./assets/weighted-round-robin-1.png)
+
+![Weighted Round Robin algorithm](./assets/weighted-round-robin-2.png)
+
+![Least Connections Time algorithm](./assets/least-connections.png)
+
+![Least Response Time algorithm](./assets/least-response-time-1.png)
+
+![Least Response Time algorithm](./assets/least-response-time-2.png)
+
+![IP hash algorithm](./assets/ip-hash-1.png)
+
+![IP hash algorithm](./assets/ip-hash-2.png)
+
+
+
+The Load Balancer is related with OSI 
+
+![Load balancer](./assets/load-balancer-osi.png)
+
+
 
 ## **Content Delivery Networks (CDN)**
 
